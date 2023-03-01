@@ -684,7 +684,7 @@ class _CalendarState extends State<Calendar> {
                           Expanded(
                             flex: 30,
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(10.0),
                               // If the event is all day, then display the word "All day" with no time.
                               child: event.isAllDay || event.isMultiDay
                                   ? allOrMultiDayDayTimeWidget(event)
