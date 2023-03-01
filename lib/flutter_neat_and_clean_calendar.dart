@@ -605,7 +605,7 @@ class _CalendarState extends State<Calendar> {
             // Create a list of events that are occurring on the currently selected day, if there are
             // any. Otherwise, display an empty Container.
             ? ListView.builder(
-                padding: EdgeInsets.all(0.0),
+                padding: EdgeInsets.all(10.0),
                 itemBuilder: (BuildContext context, int index) {
                   final NeatCleanCalendarEvent event = _selectedEvents![index];
                   final String start =
@@ -630,9 +630,6 @@ class _CalendarState extends State<Calendar> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          SizedBox(
-                            height: 5.0,
-                          ),
                           Expanded(
                             flex: 5,
                             child: Padding(
