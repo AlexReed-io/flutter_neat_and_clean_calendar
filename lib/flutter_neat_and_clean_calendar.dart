@@ -114,6 +114,7 @@ class Calendar extends StatefulWidget {
   final String multiDayEndText;
   final Color? eventColor;
   final Color? eventDoneColor;
+  final Color? eventBackgroundColor;
   final DateTime? initialDate;
   final bool isExpanded;
   final List<String> weekDays;
@@ -157,6 +158,7 @@ class Calendar extends StatefulWidget {
     this.multiDayEndText: 'End',
     this.eventColor,
     this.eventDoneColor,
+    this.eventBackgroundColor,
     this.initialDate,
     this.isExpanded = false,
     this.weekDays = const ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -604,8 +606,7 @@ class _CalendarState extends State<Calendar> {
         child: _selectedEvents != null && _selectedEvents!.isNotEmpty
             // Create a list of events that are occurring on the currently selected day, if there are
             // any. Otherwise, display an empty Container.
-            ? Padding(padding: const EdgeInsets.all(10),
-            child: ListView.builder(
+            ? ListView.builder(
                 padding: EdgeInsets.all(10.0),
                 itemBuilder: (BuildContext context, int index) {
                   final NeatCleanCalendarEvent event = _selectedEvents![index];
@@ -628,7 +629,7 @@ class _CalendarState extends State<Calendar> {
                           widget.onEventLongPressed!(event);
                         }
                       },
-                      child: Row(
+                      child: Container(color: widget.eventBackgroundColor, child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Expanded(
@@ -688,14 +689,14 @@ class _CalendarState extends State<Calendar> {
                             ),
                           )
                         ],
-                      ),
+                      )),
                     ),
                   ),
                   
                         const SizedBox(height: 10)]);
                 },
                 itemCount: _selectedEvents!.length,
-              ))
+              )
             : Container(),
       );
     } else {
