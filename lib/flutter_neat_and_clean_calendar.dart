@@ -604,7 +604,8 @@ class _CalendarState extends State<Calendar> {
         child: _selectedEvents != null && _selectedEvents!.isNotEmpty
             // Create a list of events that are occurring on the currently selected day, if there are
             // any. Otherwise, display an empty Container.
-            ? ListView.builder(
+            ? Padding(padding: const EdgeInsets.all(10),
+            child: ListView.builder(
                 padding: EdgeInsets.all(10.0),
                 itemBuilder: (BuildContext context, int index) {
                   final NeatCleanCalendarEvent event = _selectedEvents![index];
@@ -612,7 +613,7 @@ class _CalendarState extends State<Calendar> {
                       DateFormat('HH:mm').format(event.startTime).toString();
                   final String end =
                       DateFormat('HH:mm').format(event.endTime).toString();
-                  return Container(
+                  return Column(children: [Container(
                     height: widget.eventTileHeight ??
                         MediaQuery.of(context).size.height * 0.075,
                     child: GestureDetector(
@@ -689,10 +690,12 @@ class _CalendarState extends State<Calendar> {
                         ],
                       ),
                     ),
-                  );
+                  ),
+                  
+                        const SizedBox(height: 10)]);
                 },
                 itemCount: _selectedEvents!.length,
-              )
+              ))
             : Container(),
       );
     } else {
