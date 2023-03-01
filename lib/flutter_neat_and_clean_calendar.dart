@@ -630,6 +630,9 @@ class _CalendarState extends State<Calendar> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
+                          SizedBox(
+                            height: 5.0,
+                          ),
                           Expanded(
                             flex: 5,
                             child: Padding(
