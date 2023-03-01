@@ -632,18 +632,21 @@ class _CalendarState extends State<Calendar> {
                       child: Container(color: widget.eventBackgroundColor, child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Expanded(
-                            flex: 5,
-                            child: Padding(
-                              padding: const EdgeInsets.all(0),
-                              child: Container(
-                                color: event.color,
-                              ),
-                            ),
-                          ),
                           SizedBox(
-                            height: 5.0,
-                          ),
+                                              height: double.infinity,
+                                              child: LayoutBuilder(builder:
+                                                  (BuildContext context,
+                                                      BoxConstraints
+                                                          constraints) {
+                                                return SizedBox(
+                                                    height:
+                                                        constraints.maxHeight,
+                                                    width: 8.0,
+                                                    child: DecoratedBox(
+                                                        decoration: BoxDecoration(
+                                                            color: event.color)));
+                                              })),
+                                          const SizedBox(width: 10),
                           Expanded(
                             flex: 75,
                             child: Padding(
