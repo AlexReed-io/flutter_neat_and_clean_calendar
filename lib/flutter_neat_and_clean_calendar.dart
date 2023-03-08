@@ -677,7 +677,7 @@ class _CalendarState extends State<Calendar> {
                                               ? '${event.description.substring(0, 32).trim()}...'
                                               : event.description,
                                           overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: widget.selectedColor)
+                                      style: TextStyle(color: widget.selectedColor))
                                 ],
                               ),
                             ),
