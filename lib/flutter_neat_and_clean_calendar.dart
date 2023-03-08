@@ -148,8 +148,7 @@ class Calendar extends StatefulWidget {
     this.dayBuilder,
     this.eventListBuilder,
     this.datePickerType: DatePickerType.hidden,
-    this.datePickerTheme: Theme.of(context)
-                .copyWith(colorScheme: Theme.of(context).colorScheme),
+    this.datePickerTheme,
     this.hideTodayIcon: false,
     this.hideArrows: false,
     this.defaultDayColor,
