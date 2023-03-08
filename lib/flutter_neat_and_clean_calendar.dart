@@ -107,6 +107,7 @@ class Calendar extends StatefulWidget {
   final Color? defaultDayColor;
   final Color? defaultOutOfMonthDayColor;
   final Color? selectedColor;
+  final Color? selectedTextColor;
   final Color? selectedTodayColor;
   final Color? todayColor;
   final String todayButtonText;
@@ -151,6 +152,7 @@ class Calendar extends StatefulWidget {
     this.defaultDayColor,
     this.defaultOutOfMonthDayColor,
     this.selectedColor,
+    this.selectedTextColor,
     this.selectedTodayColor,
     this.todayColor,
     this.todayButtonText: 'Today',
@@ -458,6 +460,7 @@ class _CalendarState extends State<Calendar> {
             defaultDayColor: widget.defaultDayColor,
             defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
             selectedColor: widget.selectedColor,
+            selectedTextColor: widget.selectedTextColor,
             selectedTodayColor: widget.selectedTodayColor,
             todayColor: widget.todayColor,
             eventColor: widget.eventColor,
@@ -503,6 +506,7 @@ class _CalendarState extends State<Calendar> {
               defaultDayColor: widget.defaultDayColor,
               defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
               selectedColor: widget.selectedColor,
+            selectedTextColor: widget.selectedTextColor,
               selectedTodayColor: widget.selectedTodayColor,
               todayColor: widget.todayColor,
               eventColor: widget.eventColor,
@@ -519,6 +523,7 @@ class _CalendarState extends State<Calendar> {
                 defaultDayColor: widget.defaultDayColor,
                 defaultOutOfMonthDayColor: widget.defaultOutOfMonthDayColor,
                 selectedColor: widget.selectedColor,
+            selectedTextColor: widget.selectedTextColor,
                 selectedTodayColor: widget.selectedTodayColor,
                 todayColor: widget.todayColor,
                 eventColor: widget.eventColor,
