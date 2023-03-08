@@ -660,9 +660,7 @@ class _CalendarState extends State<Calendar> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                      event.summary.length > 60
-                                          ? '${event.summary.substring(0, 32).trim()}...'
-                                          : event.summary,
+                                      event.summary,
                                           overflow: TextOverflow.ellipsis,
                                       style: TextStyle(color: widget.selectedColor)),
                                   (event.description) == ""
@@ -673,9 +671,7 @@ class _CalendarState extends State<Calendar> {
                                   (event.description) == ""
                                       ? Container()
                                       : Text(
-                                          event.description.length > 60
-                                              ? '${event.description.substring(0, 32).trim()}...'
-                                              : event.description,
+                                          event.description,
                                           overflow: TextOverflow.ellipsis,
                                       style: TextStyle(color: widget.selectedColor))
                                 ],
