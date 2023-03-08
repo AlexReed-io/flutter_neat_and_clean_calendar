@@ -98,6 +98,7 @@ class Calendar extends StatefulWidget {
   final DayBuilder? dayBuilder;
   final EventListBuilder? eventListBuilder;
   final DatePickerType? datePickerType;
+  final ThemeDate datePickerTheme;
   final bool hideArrows;
   final bool hideTodayIcon;
   @Deprecated(
@@ -147,6 +148,8 @@ class Calendar extends StatefulWidget {
     this.dayBuilder,
     this.eventListBuilder,
     this.datePickerType: DatePickerType.hidden,
+    this.datePickerTheme: Theme.of(context)
+                .copyWith(colorScheme: Theme.of(context).colorScheme),
     this.hideTodayIcon: false,
     this.hideArrows: false,
     this.defaultDayColor,
@@ -328,7 +331,7 @@ class _CalendarState extends State<Calendar> {
     if (widget.datePickerType != null &&
         widget.datePickerType != DatePickerType.hidden) {
       jumpDateIcon = GestureDetector(
-        child: Icon(Icons.date_range_outlined),
+        child: Icon(Icons.date_range_outlined, color: widget.selectedColor ?? Colors.white),
         onTap: () {
           if (widget.datePickerType == DatePickerType.year) {
             // show year picker
@@ -371,6 +374,12 @@ class _CalendarState extends State<Calendar> {
               initialDate: DateTime.now(),
               firstDate: DateTime(1900),
               lastDate: DateTime(2100),
+              builder: (context, child) {
+          return Theme(
+            data: widget.datePickerTheme,
+            child: child!,
+          );
+        }
             ).then((date) {
               if (date != null) {
                 setState(() {
