@@ -377,7 +377,7 @@ class _CalendarState extends State<Calendar> {
           return Theme(
             data: widget.datePickerTheme ?? Theme.of(context)
                 .copyWith(colorScheme: Theme.of(context).colorScheme),
-            child: child,
+            child: child!,
           );
         }
             ).then((date) {
