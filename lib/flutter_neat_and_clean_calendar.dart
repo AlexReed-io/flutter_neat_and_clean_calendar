@@ -98,7 +98,7 @@ class Calendar extends StatefulWidget {
   final DayBuilder? dayBuilder;
   final EventListBuilder? eventListBuilder;
   final DatePickerType? datePickerType;
-  final ThemeData datePickerTheme;
+  final ThemeData? datePickerTheme;
   final bool hideArrows;
   final bool hideTodayIcon;
   @Deprecated(
