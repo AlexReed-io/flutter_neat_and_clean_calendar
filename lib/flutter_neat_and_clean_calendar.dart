@@ -780,7 +780,6 @@ class _CalendarState extends State<Calendar> {
       });
     }
     return Container(
-      color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
