@@ -98,7 +98,7 @@ class Calendar extends StatefulWidget {
   final DayBuilder? dayBuilder;
   final EventListBuilder? eventListBuilder;
   final DatePickerType? datePickerType;
-  final ThemeDate datePickerTheme;
+  final ThemeData datePickerTheme;
   final bool hideArrows;
   final bool hideTodayIcon;
   @Deprecated(
@@ -377,7 +377,7 @@ class _CalendarState extends State<Calendar> {
               builder: (context, child) {
           return Theme(
             data: widget.datePickerTheme,
-            child: child!,
+            child: child,
           );
         }
             ).then((date) {
