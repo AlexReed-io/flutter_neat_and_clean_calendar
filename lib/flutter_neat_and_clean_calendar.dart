@@ -660,12 +660,11 @@ class _CalendarState extends State<Calendar> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                      event.summary.length > 35
+                                      event.summary.length > 60
                                           ? '${event.summary.substring(0, 32).trim()}...'
                                           : event.summary,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .subtitle2),
+                                          overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: widget.selectedColor)),
                                   (event.description) == ""
                                       ? Container()
                                       : SizedBox(
@@ -674,11 +673,11 @@ class _CalendarState extends State<Calendar> {
                                   (event.description) == ""
                                       ? Container()
                                       : Text(
-                                          event.description.length > 35
+                                          event.description.length > 60
                                               ? '${event.description.substring(0, 32).trim()}...'
                                               : event.description,
                                           overflow: TextOverflow.ellipsis,
-                                        )
+                                      style: TextStyle(color: widget.selectedColor)
                                 ],
                               ),
                             ),
@@ -718,8 +717,8 @@ class _CalendarState extends State<Calendar> {
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(start, style: Theme.of(context).textTheme.bodyText1),
-        Text(end, style: Theme.of(context).textTheme.bodyText1),
+        Text(start, style: TextStyle(color: widget.selectedColor)),
+        Text(end, style: TextStyle(color: widget.selectedColor)),
       ],
     );
   }
@@ -735,7 +734,7 @@ class _CalendarState extends State<Calendar> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(widget.allDayEventText,
-              style: Theme.of(context).textTheme.bodyText1),
+              style: TextStyle(color: widget.selectedColor)),
         ],
       );
     }
