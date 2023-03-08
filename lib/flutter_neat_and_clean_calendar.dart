@@ -305,11 +305,11 @@ class _CalendarState extends State<Calendar> {
     if (!widget.hideArrows) {
       leftArrow = PlatformIconButton(
         onPressed: isExpanded ? previousMonth : previousWeek,
-        icon: Icon(Icons.chevron_left),
+        icon: Icon(Icons.chevron_left, color: selectedColor),
       );
       rightArrow = PlatformIconButton(
         onPressed: isExpanded ? nextMonth : nextWeek,
-        icon: Icon(Icons.chevron_right),
+        icon: Icon(Icons.chevron_right, color: selectedColor),
       );
     } else {
       leftArrow = Container();
@@ -318,7 +318,7 @@ class _CalendarState extends State<Calendar> {
 
     if (!widget.hideTodayIcon) {
       todayIcon = GestureDetector(
-        child: Text(widget.todayButtonText),
+        child: Text(widget.todayButtonText, style: TextStyle(color: selectedColor)),
         onTap: resetToToday,
       );
     } else {
@@ -411,7 +411,7 @@ class _CalendarState extends State<Calendar> {
                 displayMonth,
                 style: widget.displayMonthTextStyle ??
                     TextStyle(
-                      fontSize: 20.0,
+                      fontSize: 20.0, color: selectedColor
                     ),
               ),
             ],
