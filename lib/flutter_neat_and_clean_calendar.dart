@@ -375,7 +375,8 @@ class _CalendarState extends State<Calendar> {
               lastDate: DateTime(2100),
               builder: (context, child) {
           return Theme(
-            data: widget.datePickerTheme,
+            data: widget.datePickerTheme ?? Theme.of(context)
+                .copyWith(colorScheme: Theme.of(context).colorScheme),
             child: child,
           );
         }
@@ -762,8 +763,8 @@ class _CalendarState extends State<Calendar> {
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(start, style: Theme.of(context).textTheme.bodyText1),
-        Text(end, style: Theme.of(context).textTheme.bodyText1),
+        Text(start, style: TextStyle(color: widget.selectedColor)),
+        Text(end, style: TextStyle(color: widget.selectedColor)),
       ],
     );
   }
