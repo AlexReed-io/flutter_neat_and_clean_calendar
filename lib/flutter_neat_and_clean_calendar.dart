@@ -110,6 +110,7 @@ class Calendar extends StatefulWidget {
   final Color? selectedColor;
   final Color? selectedTextColor;
   final Color? selectedTodayColor;
+  final Color? selectedTodayTextColor;
   final Color? todayColor;
   final String todayButtonText;
   final String allDayEventText;
@@ -156,6 +157,7 @@ class Calendar extends StatefulWidget {
     this.selectedColor,
     this.selectedTextColor,
     this.selectedTodayColor,
+    this.selectedTodayTextColor,
     this.todayColor,
     this.todayButtonText: 'Today',
     this.allDayEventText: 'All Day',
