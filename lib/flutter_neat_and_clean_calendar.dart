@@ -107,8 +107,8 @@ class Calendar extends StatefulWidget {
   final List<NeatCleanCalendarEvent>? eventsList;
   final Color? defaultDayColor;
   final Color? defaultOutOfMonthDayColor;
-  final Color? eventTitleColor,
-  final Color? eventSubtitleColor,
+  final Color? eventTitleColor;
+  final Color? eventSubtitleColor;
   final Color? selectedColor;
   final Color? selectedTextColor;
   final Color? selectedTodayColor;
