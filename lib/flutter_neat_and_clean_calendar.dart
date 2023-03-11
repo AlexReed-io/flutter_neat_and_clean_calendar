@@ -107,6 +107,8 @@ class Calendar extends StatefulWidget {
   final List<NeatCleanCalendarEvent>? eventsList;
   final Color? defaultDayColor;
   final Color? defaultOutOfMonthDayColor;
+  final Color? eventTitleColor,
+  final Color? eventSubtitleColor,
   final Color? selectedColor;
   final Color? selectedTextColor;
   final Color? selectedTodayColor;
@@ -154,6 +156,8 @@ class Calendar extends StatefulWidget {
     this.hideArrows: false,
     this.defaultDayColor,
     this.defaultOutOfMonthDayColor,
+    this.eventTitleColor,
+    this.eventSubtitleColor,
     this.selectedColor,
     this.selectedTextColor,
     this.selectedTodayColor,
@@ -676,7 +680,7 @@ class _CalendarState extends State<Calendar> {
                                   Text(
                                       event.summary,
                                           overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: widget.selectedColor)),
+                                      style: TextStyle(color: widget.eventTitleColor)),
                                   (event.description) == ""
                                       ? Container()
                                       : SizedBox(
@@ -687,7 +691,7 @@ class _CalendarState extends State<Calendar> {
                                       : Text(
                                           event.description,
                                           overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: widget.selectedColor))
+                                      style: TextStyle(color: widget.eventSubtitleColor))
                                 ],
                               ),
                             ),
